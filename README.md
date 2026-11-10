@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🛡️ NIRBHAYA X (निर्भया X)
 ### *From Safety to Evidence, From Evidence to Justice.*
 
@@ -360,3 +361,6 @@ Use these seeded credentials to test multi-role experiences:
 ## 📄 License
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
+=======
+# NirbhayaX
+>>>>>>> 9fe326f946d60c78da9581171641b52db40ca21c
