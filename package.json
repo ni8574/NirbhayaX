@@ -1,0 +1,34 @@
+{
+  "name": "nirbhaya-x",
+  "version": "1.0.0",
+  "description": "NIRBHAYA X - From Safety to Evidence, From Evidence to Justice",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend",
+    "contracts"
+  ],
+  "scripts": {
+    "setup": "node scripts/setup.js",
+    "dev": "node scripts/dev.js",
+    "dev:all": "concurrently -k -n \"CHAIN,BACKEND,FRONTEND,AI\" -c \"yellow,blue,green,magenta\" \"npm run --prefix contracts node\" \"npm run --prefix backend dev\" \"npm run --prefix frontend dev\" \"npm run --prefix ai-service dev\"",
+    "test": "npm run --prefix contracts test && npm run --prefix backend test",
+    "seed": "node backend/src/utils/seed.js",
+    "compile:contracts": "npm run --prefix contracts compile",
+    "deploy:contracts": "npm run --prefix contracts deploy"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "keywords": [
+    "womens-safety",
+    "web3",
+    "blockchain",
+    "ai",
+    "evidence-integrity",
+    "justice"
+  ],
+  "author": "Nirbhaya X Team",
+  "license": "MIT"
+}
+

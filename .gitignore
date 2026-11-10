@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Environment variables (Root and all subdirectories)
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+**/.env
+**/.env.*
+**/.env.local
+**/.env.production
+
+# Build outputs
+dist/
+**/dist/
+build/
+**/build/
+artifacts/
+**/artifacts/
+cache/
+**/cache/
+typechain-types/
+
+# Database, Storage & Cryptographic Secrets
+mongodb-data/
+uploads/
+**/uploads/
+vault_storage/
+**/vault_storage/*.enc
+*.enc
+*.key
+*.pem
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+

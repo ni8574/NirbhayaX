@@ -1,0 +1,52 @@
+services:
+  # ========================================================
+  # 1. Node.js Backend API Gateway & WebSocket Hub
+  # ========================================================
+  - type: web
+    name: nirbhaya-x-backend
+    runtime: node
+    plan: free
+    region: oregon
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node src/server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DEMO_MODE
+        value: "true"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: ENCRYPTION_KEY
+        generateValue: true
+      - key: MONGODB_URI
+        sync: false
+      - key: CLIENT_URL
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+      - key: AI_SERVICE_URL
+        fromService:
+          type: web
+          name: nirbhaya-x-ai
+          property: host
+
+  # ========================================================
+  # 2. Python FastAPI Responsible AI Microservice
+  # ========================================================
+  - type: web
+    name: nirbhaya-x-ai
+    runtime: python
+    plan: free
+    region: oregon
+    rootDir: ai-service
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+

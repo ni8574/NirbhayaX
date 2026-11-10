@@ -1,0 +1,29 @@
+{
+  "name": "nirbhaya-x-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Nirbhaya X",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "seed": "node src/utils/seed.js",
+    "test": "node tests/auth.test.js && node tests/rbac.test.js && node tests/sos.test.js && node tests/vault.test.js && node tests/ai.test.js && node tests/justice.test.js && node tests/medicare.test.js && node tests/case.test.js",
+    "test:ai": "node tests/ai.test.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.10.1",
+    "multer": "^1.4.5-lts.1",
+    "qrcode": "^1.5.4",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^10.1.4"
+  }
+}
